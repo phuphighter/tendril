@@ -17,9 +17,9 @@ describe Tendril::Client do
       @client = Tendril::Client.new(:email => "jason@tendrilinc.com", 
                                     :password => "password", 
                                     :subdomain => "dev-program", :account_id => "Jenkins")
-      @pricing = @client.pricing("schedule", :from => "2011-10-09T21:45:08-0500", :to => "2011-10-10T21:45:08-0500", :"external-account-id" => "Jenkins")
+      @pricing = @client.pricing("schedule", :from => "2011-10-09T21:45:08-0500", :to => "2011-10-11T21:45:08-0500", :"external-account-id" => "Jenkins")
       @pricing["effectivePriceRecords"].size.should == 1
-      @pricing["@startDate"].should == "2011-09-11T02:45:08Z"
+      @pricing["@startDate"].should == "2011-10-10T02:45:08Z"
     end
   end
   
@@ -30,7 +30,7 @@ describe Tendril::Client do
       @client = Tendril::Client.new(:email => "jason@tendrilinc.com", 
                                     :password => "password", 
                                     :subdomain => "dev-program", :account_id => "Jenkins")
-      @meter = @client.meter("consumption", :from => "2010-05-09T21:45:08-0500", :to => "2010-10-10T21:45:08-0500", :"external-account-id" => "Jenkins")
+      @meter = @client.meter("consumption", :from => "2010-10-09T21:45:08-0500", :to => "2010-10-10T21:45:08-0500", :"external-account-id" => "Jenkins")
       @meter["MeterReading"].size.should == 1
     end
     
@@ -38,7 +38,7 @@ describe Tendril::Client do
       @client = Tendril::Client.new(:email => "jason@tendrilinc.com", 
                                     :password => "password", 
                                     :subdomain => "dev-program", :account_id => "Jenkins")
-      @meter = @client.meter("read", :from => "2010-05-09T21:45:08-0500", :to => "2010-06-09T21:45:08-0500", :"external-account-id" => "Jenkins")
+      @meter = @client.meter("read", :from => "2010-05-09T21:45:08-0500", :to => "2010-05-10T21:45:08-0500", :"external-account-id" => "Jenkins")
       @meter["MeterReading"].first["Readings"].size.should == 96
     end
   end

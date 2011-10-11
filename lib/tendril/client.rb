@@ -40,7 +40,7 @@ module Tendril
     end
     
     def tendril_convert_time(time)
-      Time.parse(time).strftime("%Y-%d-%mT%H:%M:%S%z")
+      Time.parse(time).strftime("%Y-%m-%dT%H:%M:%S%z")
       # time.gsub(/((\d+-){2}\d+)(\s+)((\d+:){2}\d+)(\s+)(\S+)/, '\1'+'T'+'\4\7')
     end
     

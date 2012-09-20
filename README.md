@@ -1,4 +1,4 @@
-# Google Places
+# Tendril
 
 Ruby wrapper for the [Tendril API](https://groups.google.com/forum/#!forum/tendril-app-dev).
 
